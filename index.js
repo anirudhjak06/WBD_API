@@ -35,7 +35,7 @@ const cloudinary=require("./cloud uploads/cloudinary")
 const fs=require('fs')
 const MONGODB_URI = process.env.NODE_ENV === 'test' 
   ? process.env.TEST_MONGODB_URI
-  : process.env.MONGODB_URI
+  : process.env.MONGODB_URL
 mongoose
   .connect(MONGODB_URI)
   .then(() => console.log("DB Connection Successfull!"))
