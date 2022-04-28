@@ -5,6 +5,9 @@ const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
+// const fetch = require('node-fetch');
+// const redis = require('redis');
+
 
 //REGISTER
 router.post("/register", async (req, res) => {
@@ -52,7 +55,7 @@ router.post("/login", async (req, res) => {
     );
 
     const { password, ...others } = user._doc;
-
+      console.log("Logged in succeefully");
     res.status(200).json({...others, accessToken});
   } catch (err) {
 
